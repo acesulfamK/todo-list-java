@@ -1,5 +1,6 @@
 package mypackage.views;
 import mypackage.controllers.AppController;
+import mypackage.controllers.UserController;
 
 import java.util.*;
 public class LoginView{
@@ -13,7 +14,7 @@ public class LoginView{
         while(true){
             System.out.print("Input your name:");
             String name = scan.nextLine();
-            if(name.equals("taro")){
+            if(UserController.containsName(name)){
                 this.controller.loginSucceeded();
                 break;
             } else {

@@ -1,4 +1,5 @@
 package mypackage.models;
+
 public class User{
     private String name;
     public User(String name){
@@ -7,5 +8,10 @@ public class User{
     
     public String getName(){
         return this.name;
+    }
+    
+    @Override
+    public String toString(){
+        return ""+this.name+":User";
     }
 }

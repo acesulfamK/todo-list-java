@@ -2,7 +2,6 @@ package mypackage.controllers;
 
 import mypackage.views.*;
 import java.util.*;
-import mypackage.models.User;
 
 public class AppController{
 
