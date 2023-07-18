@@ -43,4 +43,14 @@ public class Todo {
     public String toString(){
         return this.title+","+this.createdAt+","+this.updatedAt;
     }
+    
+    public String toStringForCsv(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+        return title+","+
+        content+","+
+        createdAt.format(formatter)+","+
+        updatedAt.format(formatter)+","+
+        dueDate.format(formatter)+","+
+        priority+",";
+    }
 }

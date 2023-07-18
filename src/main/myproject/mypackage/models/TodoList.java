@@ -5,6 +5,8 @@ import java.util.*;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 
 public class TodoList {
@@ -48,5 +50,17 @@ public class TodoList {
         for(int i=0;i<todoList.size();i++){
             System.out.println(""+i+": "+ todoList.get(i));
         }
+    }
+
+    
+    public void save(String filepath){
+        try(PrintWriter writer = new PrintWriter(filepath)){
+            for(Todo todo: this.todoList){
+                writer.println(todo.toStringForCsv());
+            }
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        
     }
 }

@@ -10,8 +10,10 @@ public class TodoListView{
         System.out.println("TodoListView Contructor");
         this.controller = controller;
         displayTodoList();
-        displayControlPanel();
-        displayTodoList();
+
+        while(displayControlPanel())
+            displayTodoList();
+        controller.saveTodoList();
     }
 
     public void displayTodoList(){
@@ -19,18 +21,21 @@ public class TodoListView{
         controller.showTodoList();
     }
     
-    public void displayControlPanel(){
+    public boolean displayControlPanel(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Command: [a]:add, [d]:delete");
-        System.out.println("OK");
+        System.out.println("Command: [a]:add, [d]:delete, [e] exit");
         char c = scan.next().charAt(0);
         switch(c){
             case 'a':
                 displayAddTodo();
                 break;
             case 'd':
+                displayDeleteTodo();
                 break;
+            case 'e':
+                return false;
         }
+        return true;
          
     
     }
@@ -48,6 +53,12 @@ public class TodoListView{
         System.out.print("priority:");
         priority = scan.nextLine();
         this.controller.addTodo(title,content,endDate,priority);
+    }
+    public void displayDeleteTodo(){
+        System.out.println("Input the number of task");
+        Scanner scan = new Scanner(System.in);
+        int input = Integer.parseInt(scan.nextLine());
+        controller.deleteTodo(input);
     }
     
 }
