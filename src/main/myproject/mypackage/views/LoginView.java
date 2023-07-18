@@ -1,7 +1,6 @@
 package mypackage.views;
 import mypackage.controllers.AppController;
 import mypackage.controllers.UserController;
-import mypackage.models.User;
 
 import java.util.*;
 public class LoginView{

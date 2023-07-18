@@ -22,6 +22,22 @@ public class Todo {
         this.dueDate= LocalDate.parse(datalist[4],formatter);
         this.priority = Integer.parseInt(datalist[5]);
     }
+    
+    public Todo(
+        String title,
+        String content,
+        LocalDate createdAt,
+        LocalDate updatedAt,
+        LocalDate dueDate,
+        int priority
+    ){
+        this.title = title;
+        this.content = content;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.dueDate = dueDate;
+        this.priority = priority;
+    }
 
     @Override
     public String toString(){
