@@ -8,13 +8,13 @@ import java.util.*;
 public class AppController{
 
     private LoginView loginView;
-    private TodoListView todoListView;
+    private TodoListController todoListController;
     private User user;
 
     public AppController(){
         this.loginView = new LoginView(this);
         System.out.println("login Succeeded(this is in AppController)!!");
-        this.todoListView = new TodoListView(this);
+        this.todoListController = new TodoListController(this);
     }
     
     
