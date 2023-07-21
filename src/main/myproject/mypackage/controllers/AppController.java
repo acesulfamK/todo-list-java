@@ -15,7 +15,6 @@ public class AppController{
     public AppController(){
         System.out.println("login Succeeded(this is in AppController)!!");
         while(true){
-            //this.loginView = new LoginView(this);
             this.userController = new UserController(this);
             this.todoListController = new TodoListController(this);
         }

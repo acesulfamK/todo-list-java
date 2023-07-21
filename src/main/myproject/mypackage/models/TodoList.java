@@ -33,6 +33,10 @@ public class TodoList {
     public void add(Todo todo){
         todoList.add(todo);
     }
+    
+    public Todo getTodo(int n){
+        return todoList.get(n);
+    }
 
     public void add(
         String title,

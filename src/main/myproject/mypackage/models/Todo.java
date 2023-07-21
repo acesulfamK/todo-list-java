@@ -53,4 +53,28 @@ public class Todo {
         dueDate.format(formatter)+","+
         priority+",";
     }
+    
+    public String getTitle(){
+        return title;
+    }
+
+    public String getContent(){
+        return content;
+    }
+    
+    public LocalDate getCreatedAt(){
+        return createdAt;
+    }
+    
+    public LocalDate getUpdatedAt(){
+        return updatedAt;
+    }
+    
+    public LocalDate getDueDate(){
+        return dueDate;
+    }
+    
+    public int getPriority(){
+        return priority;
+    }
 }

@@ -4,6 +4,7 @@ import mypackage.models.TodoList;
 import mypackage.models.User;
 import mypackage.models.Todo;
 import mypackage.views.TodoListView;
+import mypackage.views.TodoDetailView;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -21,6 +22,7 @@ public class TodoListController {
         user = controller.getUser();
     }
     
+    
     public void addTodo(String title, String content, String endDate, String priority){
         LocalDate endDateOfLocalDate = LocalDate.parse(endDate,DateTimeFormatter.ofPattern("yyyyMMdd"));
         int priorityOfInt = Integer.parseInt(priority);
@@ -29,6 +31,10 @@ public class TodoListController {
     }
     public void deleteTodo(int input){
         todoList.delete(input);
+    }
+    
+    public void displayTodoDetail(int n){
+        new TodoDetailView(this,todoList.getTodo(n));
     }
     
     
