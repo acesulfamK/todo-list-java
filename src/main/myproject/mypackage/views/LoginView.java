@@ -1,13 +1,12 @@
 package mypackage.views;
-import mypackage.controllers.AppController;
 import mypackage.controllers.UserController;
 
 import java.util.*;
 public class LoginView{
     
-    private AppController controller;
+    private UserController controller;
     
-    public LoginView(AppController controller){
+    public LoginView(UserController controller){
         this.controller = controller;
         System.out.println("LoginView Constructor!!");
         Scanner scan = new Scanner(System.in);

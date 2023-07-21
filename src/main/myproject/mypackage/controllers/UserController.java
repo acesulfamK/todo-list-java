@@ -2,8 +2,22 @@ package mypackage.controllers;
 import java.util.*;
 import java.io.*;
 import mypackage.models.User;
+import mypackage.controllers.AppController;
+import mypackage.views.LoginView;
 
 public class UserController{
+    private AppController controller;
+    private LoginView loginView;
+
+    public UserController(AppController controller){
+        this.controller = controller;
+        this.loginView = new LoginView(this);
+    }
+    
+    public void setUser(String user){
+        this.controller.setUser(user);
+    }
+
     public static boolean containsName(String name){
         String csvFile = "../resources/data/userlist.csv";
         String line;

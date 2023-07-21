@@ -9,12 +9,14 @@ public class AppController{
 
     private LoginView loginView;
     private TodoListController todoListController;
+    private UserController userController;
     private User user;
 
     public AppController(){
         System.out.println("login Succeeded(this is in AppController)!!");
         while(true){
-            this.loginView = new LoginView(this);
+            //this.loginView = new LoginView(this);
+            this.userController = new UserController(this);
             this.todoListController = new TodoListController(this);
         }
     }
